@@ -4,6 +4,7 @@ import IconPlay from 'public/images/icon-play.svg'
 
 
 const RenderItem = ({item}) => {
+  console.log('data renderitem', item)
   return (
     <div className='w-1/4 px-4'>
         <div className='item relative'>
@@ -19,7 +20,7 @@ const RenderItem = ({item}) => {
                 {item?.level ?? "Course level"}
               </h5>
             </div>
-            <Link href="/course/[slug]" as={`/courses/${item.id}`}>
+            <Link href="/courses/[id]" as={`/courses/${item.id}`}>
               <a className='link-wrapped'/>
             </Link>
         </div>

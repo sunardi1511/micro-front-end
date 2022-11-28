@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Hero = () => {
 
-    const submit = () => {
+    const  [state, setState] = useState(() => (""))
 
+    const submit = () => {
+        window.open(`${process.env.NEXT_PUBLIC_MEMBERPAGE_URL}/register?email=${state}`)
     }
     return (
         <div className='flex justify-between items-center'>
@@ -19,7 +21,11 @@ const Hero = () => {
                 </p>
 
                 <form onSubmit={submit}>
-                    <input type='text' className='bg-white focus:outline-none border-0 px-6 py-3 w-1/2' placeholder='Your email address' />
+                    <input 
+                    type='text' className='bg-white focus:outline-none border-0 px-6 py-3 w-1/2'
+                    onChange={(event) => setState(event.target.value)} 
+                    value={state}
+                    placeholder='Your email address' />
                     <button className='bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none 
                     shadow-inner text-white px-6 py-3'>Daftar Now</button>
                 </form>

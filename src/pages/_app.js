@@ -7,7 +7,7 @@ import "nprogress/nprogress.css"
 import "react-toastify/dist/ReactToastify.css"
 import "../../tailwindcss/style.css";
 
-NProgress.configure({})
+NProgress.configure({showSpinner: false})
 Router.events.on("routeChangeStart", () =>NProgress.start());
 Router.events.on("hashChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
